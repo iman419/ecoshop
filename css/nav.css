@@ -1,0 +1,17 @@
+.navbar {
+    justify-content: center; 
+}
+
+.navbar-brand {
+    font-size: 1.8em; 
+}
+
+.nav-link {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #45a049; 
+}
