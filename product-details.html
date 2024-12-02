@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoShop - Product Details</title>
+    <link rel="stylesheet" href="css/product-details.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">EcoShop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product-details.html">Products</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-details">
+            <div class="text-center">
+                <h1>Eco Bag</h1>
+                <img src="images/eco-bag.jpg" alt="Eco Bag" class="product-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                <p>A reusable bag made from recycled materials. Perfect for shopping and reducing plastic waste.</p>
+                <p><strong>Price: $10.00</strong></p>
+                <button class="btn btn-success">Add to Cart</button>
+            </div>
+        </section>
+
+        <section class="product-reviews text-center">
+            <h2>Product Reviews</h2>
+            <ul>
+                <li>Great quality! - <strong>John Doe</strong></li>
+                <li>Very useful and eco-friendly. - <strong>Jane Smith</strong></li>
+                <li>Love this bag! - <strong>Emily Johnson</strong></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 EcoShop | Course: Web Development | Iman Hadžihasanović</p>
+    </footer>
+</body>
+</html>
