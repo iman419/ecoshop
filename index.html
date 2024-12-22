@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoShop - Home</title>
-    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 <body>
     <header>
@@ -26,21 +27,17 @@
             </div>
         </nav>
     </header>
-
-
-    </section>
     <section class="hero">
         <h1>Welcome to EcoShop</h1>
         <p style="text-align: center;">Your one-stop shop for sustainable products!</p>
     </section>
-
     <main>
         <section class="product-gallery">
             <h2>Featured Products</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="images/eco-bag.jpg" alt="Eco Bag" class="card-img-top" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                        <img src="images/eco-bag.jpg" alt="Eco Bag" class="card-img-top" onerror="this.onerror=null; this.src='images/placeholder.jpg';" onclick="openModal(this.src)">
                         <div class="card-body">
                             <h5 class="card-title">Eco Bag</h5>
                             <p class="card-text">A reusable bag made from recycled materials.</p>
@@ -50,7 +47,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="images/bamboo-toothbrush.jpg" alt="Bamboo Toothbrush" class="card-img-top" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                        <img src="images/bamboo-toothbrush.jpg" alt="Bamboo Toothbrush" class="card-img-top" onerror="this.onerror=null; this.src='images/placeholder.jpg';" onclick="openModal(this.src)">
                         <div class="card-body">
                             <h5 class="card-title">Bamboo Toothbrush</h5>
                             <p class="card-text">An eco-friendly toothbrush made from bamboo.</p>
@@ -60,7 +57,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="images/reusable-straws.jpg" alt="Reusable Straws" class="card-img-top" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                        <img src="images/reusable-straws.jpg" alt="Reusable Straws" class="card-img-top" onerror="this.onerror=null; this.src='images/placeholder.jpg';" onclick="openModal(this.src)">
                         <div class="card-body">
                             <h5 class="card-title">Reusable Straws</h5>
                             <p class="card-text">Say goodbye to plastic straws!</p>
@@ -70,28 +67,94 @@
                 </div>
             </div>
         </section>
-
         <section>
             <h2>About Us</h2>
-            <p class="about-us-text" style="text-align: center;"> 
-                At EcoShop, we believe in a sustainable future. Our mission is to provide eco-friendly products that help reduce waste and promote a greener lifestyle.
-            </p>
+            <p class="about-us-text" style="text-align: center;">At EcoShop, we believe in a sustainable future. Our mission is to provide eco-friendly products that help reduce waste and promote a greener lifestyle.</p>
         </section>
-        
         <section>
             <h2>Contact Us</h2>
-            <p class="contact-us-text" style="text-align: center;">
-                If you have any questions, feel free to <a href="mailto:amela.vatres@stu.ibu.edu.ba" target="_blank">email us</a>.
-            </p>
+            <p class="contact-us-text" style="text-align: center;">If you have any questions, feel free to <a href="mailto:amela.vatres@stu.ibu.edu.ba" target="_blank">email us</a>.</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
         </section>
-        
+        <section>
+            <h2>FAQs</h2>
+            <div id="faqAccordion" class="accordion">
+                <div class="card">
+                    <div class="card-header" id="faqOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What is EcoShop?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="faqOne" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            EcoShop is a platform for sustainable products.
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section>
+            <h2>Theme Switcher</h2>
+            <button id="themeToggle" class="btn btn-secondary">Switch Theme</button>
+        </section>
     </main>
-
     <footer>
-        <p>&copy; 2023 EcoShop | Course: Web Development | Iman Hadžihasanović</p>
+        <p>EcoShop | Course: Web Development | Iman Hadžihasanović</p>
     </footer>
 
     
+    <div class="modal" id="imageModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" class="img-fluid" src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            $('#imageModal').modal('show');
+        }
+
+        
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const message = document.getElementById('message').value;
+           toastr.success('Message sent successfully!');
+            this.reset(); 
+        });
+
+       
+        const themeButton = document.getElementById('themeToggle');
+        let darkMode = false;
+        themeButton.addEventListener('click', () => {
+            darkMode = !darkMode;
+            document.body.classList.toggle('dark-mode', darkMode);
+            toastr.info(`Switched to ${darkMode ? 'Dark' : 'Light'} Mode`);
+        });
+    </script>
 </body>
 </html>
-
