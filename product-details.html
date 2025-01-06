@@ -1,55 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoShop - Product Details</title>
-    <link rel="stylesheet" href="css/product-details.css"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/nav.css">
-    <link rel="stylesheet" href="/css/footer.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">EcoShop</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
-                    <li class="nav-item"><a class="nav-link" href="product-details.html">Products</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+ <html lang="en"> 
+    <head>
+         <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        
+      <title>EcoShop - Product Details
 
-    <main>
-        <section class="product-details">
-            <div class="text-center">
-                <h1>Eco Bag</h1>
-                <img src="images/eco-bag.jpg" alt="Eco Bag" class="product-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
-                <p>A reusable bag made from recycled materials. Perfect for shopping and reducing plastic waste.</p>
-                <p><strong>Price: $10.00</strong></p>
-                <button class="btn btn-success">Add to Cart</button>
-            </div>
-        </section>
-
-        <section class="product-reviews text-center">
-            <h2>Product Reviews</h2>
-            <ul>
-                <li>Great quality! - <strong>John Doe</strong></li>
-                <li>Very useful and eco-friendly. - <strong>Jane Smith</strong></li>
-                <li>Love this bag! - <strong>Emily Johnson</strong></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 EcoShop | Course: Web Development | Iman Hadžihasanović</p>
-    </footer>
-</body>
-</html>
+      </title> 
+      <link rel="stylesheet" href="css/product-details.css"> 
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"> 
+      <link rel="stylesheet" href="/css/nav.css">
+      <link rel="stylesheet" href="/css/footer.css">
+        </head> 
+        <body>
+             <header>
+                 <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+                    <a class="navbar-brand" href="index.html">EcoShop</a>
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
+                        <span class="navbar-toggler-icon"></span> 
+                    </button> 
+                    <div class="collapse navbar-collapse" id="navbarNav"> 
+                        <ul class="navbar-nav ml-auto">
+                             <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li> 
+                                 <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                                  <li class="nav-item"><a class="nav-link" href="product-details.html">Products</a></li>
+                                 </ul> </div> </nav> </header> <main> <section class="product-details"> <div class="text-center"> <h1>Eco Bag</h1> <img src="images/eco-bag.jpg" alt="Eco Bag" class="product-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';" onclick="openModal('images/eco-bag.jpg')"> <p>A reusable bag made from recycled materials. Perfect for shopping and reducing plastic waste.</p> <p><strong>Price: $10.00</strong></p> <button class="btn btn-success">Add to Cart</button> </div> </section> <section class="product-reviews text-center"> <h2>Product Reviews</h2> <ul id="reviewList"> <li>Great quality! - <strong>John Doe</strong></li> <li>Very useful and eco-friendly. - <strong>Jane Smith</strong></li> <li>Love this bag! - <strong>Emily Johnson</strong></li> </ul> <button class="btn btn-info" id="loadMoreReviews">View More</button> </section> <section> <h2>FAQs</h2> <div class="accordion" id="faqAccordion"> <div class="card"> <div class="card-header" id="headingOne"> <h5 class="mb-0"> <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> What is EcoShop? </button> </h5> </div> <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion"> <div class="card-body"> EcoShop is a platform for sustainable products. </div> </div> </div> <!-- Add more FAQs similarly --> </div> </section> <section> <h2>Contact Us</h2> <form id="contact-form"> <div class="form-group"> <label for="email">Email:</label> <input type="email" class="form-control" id="email" required> </div> <div class="form-group"> <label for="message">Message:</label> <textarea class="form-control" id="message" rows="3" required></textarea> </div> <button type="submit" class="btn btn-primary">Send</button> </form> </section> <section> <button class="btn btn-secondary" id="theme-toggle">Switch Theme</button> </section> </main> <footer> <p> EcoShop | Course: Web Development | Iman Hadžihasanović</p> </footer> <!-- Modal for image gallery --> <div class="modal" id="imageModal" tabindex="-1" role="dialog"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title">Image</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div> <div class="modal-body"> <img id="modalImage" class="img-fluid" src="" alt=""> </div> </div> </div> </div> <!-- External Libraries --> <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> <script> // Modal functionality function openModal(imageSrc) { document.getElementById('modalImage').src = imageSrc; $('#imageModal').modal('show'); } // Form submission with AJAX document.getElementById('contact-form').addEventListener('submit', function(e) { e.preventDefault(); const email = document.getElementById('email').value; const message = document.getElementById('message').value; // Simulate AJAX request toastr.success('Your message has been sent successfully!'); document.getElementById('contact-form').reset(); }); // Theme switcher const themeButton = document.getElementById('theme-toggle'); let darkMode = false; themeButton.addEventListener('click', () => { darkMode = !darkMode; document.body.classList.toggle('dark-mode', darkMode); toastr.info(`Switched to ${darkMode ? 'Dark' : 'Light'} Mode`); }); // Load more reviews document.getElementById('loadMoreReviews').addEventListener('click', function() { const reviewList = document.getElementById('reviewList'); const newReviews = [ 'Best bag ever! - <strong>Sarah Brown</strong>', 'Perfect for groceries. - <strong>Michael Lee</strong>' ]; newReviews.forEach(review => { const li = document.createElement('li'); li.innerHTML = review; reviewList.appendChild(li); }); toastr.info('More reviews loaded!'); }); </script> </body> </html>
